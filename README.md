@@ -16,3 +16,16 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Docs: https://hexdocs.pm/phoenix
   * Forum: https://elixirforum.com/c/phoenix-forum
   * Source: https://github.com/phoenixframework/phoenix
+
+
+## Local Setup
+
+Run a Postgres container with podman:
+
+```sh
+podman run -d -p 5432:5432 \
+        -e POSTGRES_USER=postgres \
+        -e POSTGRES_DB=postgres \
+        -e POSTGRES_PASSWORD="postgres" \
+        --name postgres postgres:15.7-alpine
+```
