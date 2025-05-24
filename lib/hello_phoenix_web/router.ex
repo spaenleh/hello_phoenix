@@ -53,9 +53,10 @@ defmodule HelloPhoenixWeb.Router do
   end
 
   # Other scopes may use custom stacks.
-  # scope "/api", HelloPhoenixWeb do
-  #   pipe_through :api
-  # end
+  scope "/api", HelloPhoenixWeb do
+    pipe_through :api
+    resources "/urls", UrlController, except: [:new, :edit]
+  end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
   if Application.compile_env(:hello_phoenix, :dev_routes) do
